@@ -6,8 +6,6 @@
 
 <a href=""></a> <a href="https://choosealicense.com/licenses/agpl-3.0/"></a> <a href=""></a> <a href=""></a> <a href=""></a>
 
-यह प्रोजेक्ट गर्व से प्रायोजित (Sponsored) है
-
 </div>
 
 <h1 align=center>Recall.ai - मीटिंग रिकॉर्डिंग के लिए API</h1> <p align="center"> <a href=""><strong>Recall.ai</strong></a> – Zoom, Google Meet, Microsoft Teams, और व्यक्तिगत (in-person) मीटिंग्स की रिकॉर्डिंग के लिए एक API। </p>
