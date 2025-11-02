@@ -1,20 +1,16 @@
-🇮🇳 MiroTalk P2P का हिंदी अनुवाद (Hindi Translation of MiroTalk P2P)
-
-यह MiroTalk P2P की README फ़ाइल का हिंदी में अनुवाद है, जिसका प्रारूप (फॉर्मेट) मूल फ़ाइल जैसा ही रखा गया है और सरल हिंदी शब्दों का प्रयोग किया गया है।
-
 <h1 align="center">MiroTalk P2P</h1>
 
 <br />
 
 <div align="center">
 
-<a href="https://www.linkedin.com/in/miroslav-pejic-976a07101/"></a> <a href="https://choosealicense.com/licenses/agpl-3.0/"></a> <a href="https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661"></a> <a href="https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661"></a> <a href="https://discord.gg/rgGYfeYW3N"></a>
+<a href=""></a> <a href="https://choosealicense.com/licenses/agpl-3.0/"></a> <a href=""></a> <a href=""></a> <a href=""></a>
 
 यह प्रोजेक्ट गर्व से प्रायोजित (Sponsored) है
 
 </div>
 
-<h1 align=center>Recall.ai - मीटिंग रिकॉर्डिंग के लिए API</h1> <p align="center"> <a href="https://recall.ai/?utm_source=mirotalkp2p&utm_medium=sponsorship"><strong>Recall.ai</strong></a> – Zoom, Google Meet, Microsoft Teams, और व्यक्तिगत (in-person) मीटिंग्स की रिकॉर्डिंग के लिए एक API। </p>
+<h1 align=center>Recall.ai - मीटिंग रिकॉर्डिंग के लिए API</h1> <p align="center"> <a href=""><strong>Recall.ai</strong></a> – Zoom, Google Meet, Microsoft Teams, और व्यक्तिगत (in-person) मीटिंग्स की रिकॉर्डिंग के लिए एक API। </p>
 
 <hr />
 
@@ -24,23 +20,23 @@
 
 <hr/>
 
-<p align="center"> <strong><a href="https://p2p.mirotalk.com">MiroTalk P2P को एक्सप्लोर करें (देखें)</a></strong> </p>
+<p align="center"> <strong><a href="">MiroTalk P2P को एक्सप्लोर करें (देखें)</a></strong> </p>
 
 <hr />
 
-<p align="center"> <a href="https://p2p.mirotalk.com"><img src="public/images/mirotalk-header.gif"></a> </p>
+<p align="center"> <a href=""><img src="public/images/mirotalk-header.gif"></a> </p>
 
 <hr />
 
-<strong> <p align="center"> प्रश्नों, मदद, समर्थन, विचारों और चर्चाओं के लिए हमारे समुदाय से <a href='https://discord.gg/rgGYfeYW3N'>Discord</a> पर जुड़ें </p> </strong>
+<strong> <p align="center"> प्रश्नों, मदद, समर्थन, विचारों और चर्चाओं के लिए हमारे समुदाय से <a href=''>Discord</a> पर जुड़ें </p> </strong>
 
 <hr />
 
 <details> <summary>विशेषताएँ (Features)</summary>
 
-    यह 100% मुफ़्त है - AGPLv3 के तहत ओपन सोर्स - स्वयं होस्टेड (Self Hosted) और PWA!
+    यह 100% मुफ़्त है - AGPLv3 के तहत ओपन सोर्स - स्वयं होस्टेड (Self Hosted) और !
 
-    किसी डाउनलोड, प्लगइन, या लॉगिन की आवश्यकता नहीं – पूरी तरह से ब्राउज़र-आधारित।
+    कोई डाउनलोड, प्लगइन, या लॉगिन आवश्यक नहीं – पूरी तरह से ब्राउज़र-आधारित।
 
     असीमित कॉन्फ्रेंस रूम, बिना किसी समय सीमा के।
 
@@ -98,7 +94,7 @@
 
     WebRTC के माध्यम से कम विलंबता (low-latency) संचार के लिए डायरेक्ट पीयर-टू-पीयर कनेक्शन।
 
-    REST API (एप्लिकेशन प्रोग्रामिंग इंटरफ़ेस) का समर्थन करता है।
+    (एप्लिकेशन प्रोग्रामिंग इंटरफ़ेस) का समर्थन करता है।
 
     बेहतर संचार के लिए के साथ एकीकरण।
 
@@ -142,7 +138,7 @@
 
 </details>
 
-<details open> <summary>त्वरित शुरुआत (Quick start)</summary>
+<details open> <summary>त्वरित शुरुआत (Node.js से होस्ट करना) (Quick start (Hosting with Node.js))</summary>
 
     MiroTalk P2P चलाने से पहले, सुनिश्चित करें कि आपके पास Node.js है।
 
@@ -187,132 +183,3 @@
 3. मीटिंग बनाएं (Create Meeting)
 
 4. मीटिंग में शामिल हों (मूलभूत) (Join Meeting (Basic))
-
-5. टोकन के साथ मीटिंग में शामिल हों (Join Meeting with Token)
-
-6. टोकन जनरेट करें (Generate Token)
-
-ये कमांड अब MiroTalk P2P के साथ सही ढंग से काम करनी चाहिए
-
-</details>
-
-<details open> <summary>Hetzner, Netcup, Hostinger और Contabo</summary>
-
-यह एप्लिकेशन प्रदर्शन उद्देश्यों के लिए पर चल रहा है, जो सर्वोत्तम और में से एक है।
-
-👉 €20 क्लाउड क्रेडिट प्राप्त करने के लिए का उपयोग करें।
-
-ऐसी एंटरप्राइज़-ग्रेड परफॉर्मेंस को अनलॉक करें जिस पर आपको विश्वास नहीं होगा। स्केलेबल, भरोसेमंद, और उन व्यवसायों के लिए निर्मित जिन्हें अधिक की आवश्यकता है।
-
-👉
-
-24/7 समर्थन और शानदार प्रदर्शन के साथ तेज़, भरोसेमंद होस्टिंग। आज ही शुरू करें!
-
-👉
-
-अद्वितीय कीमतों पर शीर्ष-स्तरीय जर्मन वेब होस्टिंग – समर्पित सर्वर, वीपीएस, और वेब होस्टिंग का अनुभव करें।
-
-👉
-
-एक समर्पित क्लाउड सर्वर पर MiroTalk P2P के अपने स्वयं के इंस्टेंस को सेट करने के लिए, कृपया हमारे व्यापक को देखें। यह मार्गदर्शिका आपको चरण-दर-चरण प्रक्रिया से अवगत कराएगी, जिससे एक सहज और सफल डिप्लॉयमेंट सुनिश्चित होगा।
-
-</details>
-
-<details> <summary>लाइव डेमो (Live Demos)</summary>
-
-<a target="_blank" href="https://p2p.mirotalk.com"><img src="public/sponsors/Hetzner.png" style="width: 220px;"></a>
-
-https://p2p.mirotalk.com
-
-<a target="_blank" href=""><img src="" style="width: 220px;"></a>
-
-</details>
-
-<details> <summary>सुरक्षा (Security)</summary>
-
-सुरक्षा के संबंध में, कृपया का पालन करें।
-
-</details>
-
-<details> <summary>श्रेय (Credits)</summary>
-
-    ianramzy (html )
-
-    vasanthv (webrtc-logic)
-
-    fabric.js (व्हाइटबोर्ड)
-
-</details>
-
-<details> <summary>योगदान (Contributing)</summary>
-
-    योगदान का स्वागत है और इसकी बहुत सराहना की जाती है!
-
-    बस पहले npm run lint चलाएँ
-
-</details>
-
-<details> <summary>लाइसेंस (License)</summary>
-
-MiroTalk P2P AGPLv3 (GNU Affero General Public License v3.0) की शर्तों के तहत मुफ़्त और ओपन-सोर्स है। कृपया लाइसेंस की शर्तों का सम्मान करें, विशेष रूप से संशोधनों को भी मुफ़्त होना चाहिए और जनता के लिए उपलब्ध कराया जाना चाहिए। पर लाइसेंस का त्वरित अवलोकन प्राप्त करें।
-
-AGPLv3 से भिन्न शर्तों वाले को प्राप्त करने के लिए, आप आसानी से कर सकते हैं। यह आपको अपनी विशिष्ट आवश्यकताओं के अनुरूप लाइसेंसिंग शर्तों को बेहतर बनाने की अनुमति देता है।
-
-</details>
-
-<details open> <summary>परियोजना का समर्थन करें (Support the project)</summary>
-
-क्या आपको MiroTalk P2P आपकी ज़रूरतों के लिए अपरिहार्य लगता है? इस परिवर्तनकारी परियोजना का समर्थन करने में हमारे साथ जुड़ें। ऐसा करने से, न केवल आपका लोगो यहाँ प्रमुखता से प्रदर्शित होगा, बल्कि आप MiroTalk P2P के विकास और स्थिरता को भी बढ़ावा देंगे। यह सुनिश्चित करने के लिए आपका समर्थन महत्वपूर्ण है कि यह मूल्यवान मंच फलता-फूलता रहे और सभी के लिए सुलभ बना रहे। एक प्रभाव डालें – आज ही MiroTalk P2P का समर्थन करें और इस रोमांचक यात्रा का हिस्सा बनें!
-		
-		
-		
-		
-		
-
-</details>
-
-<details open> <summary>विज्ञापनदाता (Advertisers)</summary>
-		
-		
-
-</details>
-
-EffectsSDK ✨
-
-उन्नत वर्चुअल बैकग्राउंड और शोर दमन (noise suppression) के साथ अपने वीडियो कॉन्फ्रेंसिंग अनुभव को बेहतर बनाएं। EffectsSDK तेज़ एकीकरण के लिए शक्तिशाली SDKs और प्लगइन्स प्रदान करता है।
-
-एक्सप्लोर करें:
-
-    🎥 – अपने वेबकैम में वर्चुअल बैकग्राउंड और प्रभाव जोड़ें।
-
-    🔊 – स्पष्ट ऑडियो के लिए पृष्ठभूमि शोर (background noise) कम करें।
-
-    🛠️ – कस्टम समाधानों के लिए SDKs और प्लगइन्स तक पहुंचें।
-
-MiroTalk की अतिरिक्त परियोजनाओं में गोता लगाना: (Diving into Additional MiroTalk Projects:)
-
-<details> <summary>MiroTalk SFU</summary>
-
-बड़ी संख्या में लोगों के लिए अनुकूलित, सेलेक्टिव फ़ॉरवर्डिंग यूनिट रियल-टाइम वीडियो कॉन्फ्रेंस भी आज़माएँ। असीमित समय, असीमित समवर्ती रूम जिनमें से प्रत्येक में 8+ प्रतिभागी हों, एक ही CPU पर ~100 तक।
-
-</details>
-
-<details> <summary>MiroTalk C2C</summary>
-
-कैम 2 कैम के लिए अनुकूलित, पीयर टू पीयर रियल-टाइम वीडियो कॉन्फ्रेंस भी आज़माएँ। असीमित समय, असीमित समवर्ती रूम जिनमें से प्रत्येक में 2 प्रतिभागी हों।
-
-</details>
-
-<details> <summary>MiroTalk BRO</summary>
-
-लाइव ब्रॉडकास्ट (पीयर टू पीयर) लाइव वीडियो, ऑडियो और स्क्रीन स्ट्रीम को सभी जुड़े हुए उपयोगकर्ताओं (दर्शकों) को भी आज़माएँ। असीमित समय, असीमित समवर्ती रूम जिनमें से प्रत्येक में एक ब्रॉडकास्ट और कई दर्शक हों।
-
-</details>
-
-<details> <summary>MiroTalk WEB</summary>
-
-एक ऐसा प्लेटफॉर्म भी आज़माएँ जो असीमित संख्या में उपयोगकर्ताओं के प्रबंधन की अनुमति देता है। प्रत्येक उपयोगकर्ता को अपने ईमेल, उपयोगकर्ता नाम और पासवर्ड के साथ पंजीकरण करना होगा, जिसके बाद उन्हें अपने व्यक्तिगत डैशबोर्ड तक पहुंच प्राप्त होती है। डैशबोर्ड के भीतर, उपयोगकर्ता एक निर्दिष्ट तिथि और समय पर MiroTalk के वांछित संस्करण का उपयोग करके अपने रूम का प्रबंधन कर सकते हैं और मीटिंग शेड्यूल कर सकते हैं। इन मीटिंग्स के लिए आमंत्रण ईमेल के माध्यम से भेजे जा सकते हैं, वेब ब्राउज़र के माध्यम से साझा किए जा सकते हैं, या एसएमएस के माध्यम से भेजे जा सकते हैं।
-
-</details>
-
-यह परियोजना के साथ परीक्षणित है।
