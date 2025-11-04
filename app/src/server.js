@@ -45,7 +45,7 @@ dependencies: {
  * @license For commercial use or closed source, contact us at license.mirotalk@gmail.com or purchase directly from CodeCanyon
  * @license CodeCanyon: https://codecanyon.net/item/mirotalk-p2p-webrtc-realtime-video-conferences/38376661
  * @author  Miroslav Pejic - miroslav.pejic.85@gmail.com
- * @version 1.6.18
+ * @version 1.6.24
  *
  */
 
@@ -1183,6 +1183,17 @@ io.sockets.on('connect', async (socket) => {
                     const { time, prompt, context } = params;
                     // Add the prompt to the context
                     context.push({ role: 'user', content: prompt });
+
+                    // Prevent memory leak: Limit context size to last 20 messages (10 exchanges)
+                    const MAX_CONTEXT_MESSAGES = 20;
+                    if (context.length > MAX_CONTEXT_MESSAGES) {
+                        // Keep the system message (if exists) and the most recent messages
+                        const systemMessage = context[0]?.role === 'system' ? [context[0]] : [];
+                        const recentMessages = context.slice(-MAX_CONTEXT_MESSAGES);
+                        context.length = 0; // Clear array
+                        context.push(...systemMessage, ...recentMessages);
+                    }
+
                     // Call OpenAI's API to generate response
                     const completion = await chatGPT.chat.completions.create({
                         model: configChatGPT.model || 'gpt-3.5-turbo',
@@ -1195,11 +1206,12 @@ io.sockets.on('connect', async (socket) => {
                     // Add response to context
                     context.push({ role: 'assistant', content: message });
                     // Log conversation details
-                    log.info('ChatGPT', {
+                    log.debug('ChatGPT', {
                         time: time,
                         room: room_id,
                         name: peer_name,
                         context: context,
+                        contextLength: context.length,
                     });
                     // Callback response to client
                     cb({ message: message, context: context });
@@ -1375,11 +1387,11 @@ io.sockets.on('connect', async (socket) => {
 
         const activeRooms = getActiveRooms();
 
-        log.info('[Join] - active rooms and peers count', activeRooms);
+        log.debug('[Join] - active rooms and peers count', activeRooms);
 
-        log.info('[Join] - connected presenters grp by roomId', presenters);
+        log.debug('[Join] - connected presenters grp by roomId', presenters);
 
-        log.info('[Join] - connected peers grp by roomId', peers);
+        log.debug('[Join] - connected peers grp by roomId', peers);
 
         await addPeerTo(channel);
 
@@ -1422,7 +1434,7 @@ io.sockets.on('connect', async (socket) => {
             // Trigger a POST request when a user joins
             config.timestamp = log.getDateTime(false);
             axios
-                .post(webhook.url, { event: 'join', data: config })
+                .post(webhook.url, { event: 'join', data: config }, { timeout: 5000 }) // 5 second timeout
                 .then((response) => log.debug('Join event tracked:', response.data))
                 .catch((error) => log.error('Error tracking join event:', error.message));
         }
@@ -1573,7 +1585,7 @@ io.sockets.on('connect', async (socket) => {
 
         const { room_id, peer_id, peer_name, peer_uuid, to_peer_id } = data;
 
-        log.info('cmd', config);
+        log.debug('cmd', config);
 
         // Only the presenter can do this actions
         const presenterActions = ['geoLocation'];
@@ -1879,7 +1891,7 @@ io.sockets.on('connect', async (socket) => {
                 };
                 // Trigger a POST request when a user disconnects
                 axios
-                    .post(webhook.url, { event: 'disconnect', data })
+                    .post(webhook.url, { event: 'disconnect', data }, { timeout: 5000 }) // 5 second timeout
                     .then((response) => log.debug('Disconnect event tracked:', response.data))
                     .catch((error) => log.error('Error tracking disconnect event:', error.message));
             }
@@ -1892,11 +1904,13 @@ io.sockets.on('connect', async (socket) => {
                 case 0: // last peer disconnected from the room without room lock & password set
                     delete peers[channel];
                     delete presenters[channel];
+                    delete channels[channel]; // Clean up channels to prevent memory leak
                     break;
                 case 2: // last peer disconnected from the room having room lock & password set
                     if (peers[channel]['lock'] && peers[channel]['password']) {
                         delete peers[channel]; // clean lock and password value from the room
                         delete presenters[channel]; // clean the presenter from the channel
+                        delete channels[channel]; // Clean up channels to prevent memory leak
                     }
                     break;
                 default:
@@ -1908,11 +1922,11 @@ io.sockets.on('connect', async (socket) => {
 
         const activeRooms = getActiveRooms();
 
-        log.info('[removePeerFrom] - active rooms and peers count', activeRooms);
+        log.debug('[removePeerFrom] - active rooms and peers count', activeRooms);
 
-        log.info('[removePeerFrom] - connected presenters grp by roomId', presenters);
+        log.debug('[removePeerFrom] - connected presenters grp by roomId', presenters);
 
-        log.info('[removePeerFrom] - connected peers grp by roomId', peers);
+        log.debug('[removePeerFrom] - connected peers grp by roomId', peers);
 
         for (let id in channels[channel]) {
             await channels[channel][id].emit('removePeer', { peer_id: socket.id });
@@ -2204,7 +2218,14 @@ function isAllowedRoomAccess(logMessage, req, hostCfg, peers, roomId) {
  * @returns string ip
  */
 function getIP(req) {
-    return req.headers['x-forwarded-for'] || req.headers['X-Forwarded-For'] || req.socket.remoteAddress || req.ip;
+    const forwarded = req.headers['x-forwarded-for'] || req.headers['X-Forwarded-For'];
+
+    if (forwarded) {
+        // Return only the first IP (client's real IP)
+        return forwarded.split(',')[0].trim();
+    }
+
+    return req.socket.remoteAddress || req.ip;
 }
 
 /**
@@ -2213,11 +2234,14 @@ function getIP(req) {
  * @returns string
  */
 function getSocketIP(socket) {
-    return (
-        socket.handshake.headers['x-forwarded-for'] ||
-        socket.handshake.headers['X-Forwarded-For'] ||
-        socket.handshake.address
-    );
+    const forwarded = socket.handshake.headers['x-forwarded-for'] || socket.handshake.headers['X-Forwarded-For'];
+
+    if (forwarded) {
+        // Return only the first IP (client's real IP)
+        return forwarded.split(',')[0].trim();
+    }
+
+    return socket.handshake.address;
 }
 
 /**
